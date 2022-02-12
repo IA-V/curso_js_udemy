@@ -39,3 +39,25 @@ console.log(`Dia da semana`, data.getDay()); // 'getDay()' retorna o dia da Sema
 console.log(Date.now()); // 'now()' retorna o tempo decorrido do marco zero (01/01/1970) ate o momento de sua chamada em Milissegundos
 const ms = Date.now();
 console.log(new Date(ms)); // retorna a data atual kk
+
+// Parei em 19:42
+
+function zeroAEsquerda(num) {
+    return num < 10 ? `0${num}` : num;
+}
+
+function formataData(data) {
+    const dia = zeroAEsquerda(data.getDate());
+    const mes = zeroAEsquerda(data.getMonth());
+    const ano = zeroAEsquerda(data.getFullYear());
+    const hora = zeroAEsquerda(data.getHours());
+    const minuto = zeroAEsquerda(data.getMinutes());
+    const segundo = zeroAEsquerda(data.getSeconds());
+
+    return `${dia}/${mes}/${ano} ${hora}:${minuto}:${segundo}`;
+}
+
+const data2 = new Date();
+const dataBrasil = formataData(data2);
+
+console.log(dataBrasil);
